@@ -1,0 +1,142 @@
+"PatietID"	"Protocol"	"ID"	"repeat"	"Date 1st Inf"	"Diagnosis"	"OVRLES7C (code) (Legacy protocols)"	"Overall Response (legacy protocols)"	"Date Response"	"Day# Resp"	"Best Overall Response"	"Best Overall Response Coded [1=PD/Rel, 2=NR/SD, 3=PR, 4=CR]"
+p959-100	CHOP959	100		4/17/2012	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	5/10/2012	23	CR	4
+p959-101	CHOP959	101		9/11/2012	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	10/4/2012	23	CR	4
+p959-103	CHOP959	103		12/4/2012	B cell - ALL	28	28.No response	1/3/2013	30	NR	2
+p959-104	CHOP959	104		1/8/2013	B cell - ALL	8	 8.Complete remission	2/4/2013	27	CR	4
+p959-105	CHOP959	105		1/29/2013	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	2/25/2013	27	CR	4
+p959-107	CHOP959	107		5/14/2013	B cell - ALL	8	 8.Complete remission	6/13/2013	30	CR	4
+p959-108	CHOP959	108		2/27/2013	B cell - ALL	6	 6.Progressive disease (PD)	3/14/2013	15	PD	1
+p959-110	CHOP959	110		3/19/2013	B cell - ALL	8	 8.Complete remission	4/18/2013	30	CR	4
+p959-111	CHOP959	111		4/1/2013	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	4/29/2013	28	CR	4
+p959-112	CHOP959	112		4/16/2013	B cell - ALL	8	 8.Complete remission	5/17/2013	31	CR	4
+p959-113	CHOP959	113		4/10/2013	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	5/9/2013	29	CR	4
+p959-114	CHOP959	114		4/25/2013	Other:  T CELL ALL	37	37.Complete rem with incompl blood count recovery (CRi)	5/23/2013	28	CR	4
+p959-115	CHOP959	115		5/21/2013	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	6/20/2013	30	CR	4
+p959-117	CHOP959	117		5/9/2013	B cell - ALL	28	28.No response	5/31/2013	22	NR	2
+p959-118	CHOP959	118		7/16/2013	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	8/15/2013	30	CR	4
+p959-120	CHOP959	120		7/24/2013	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	8/26/2013	33	CR	4
+p959-121	CHOP959	121		9/4/2013	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	10/3/2013	29	CR	4
+p959-123	CHOP959	123		9/11/2013	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	10/7/2013	26	CR	4
+p959-124	CHOP959	124		9/17/2013	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	10/17/2013	30	CR	4
+p959-125	CHOP959	125		9/24/2013	B cell - ALL	8	 8.Complete remission	10/24/2013	30	CR	4
+p959-126	CHOP959	126		10/1/2013	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	10/28/2013	27	CR	4
+p959-127	CHOP959	127		10/15/2013	B cell - ALL	8	 8.Complete remission	11/11/2013	27	CR	4
+p959-128	CHOP959	128		1/8/2014	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	2/3/2014	26	CR	4
+p959-131	CHOP959	131		1/14/2014	B cell - ALL	8	 8.Complete remission	2/10/2014	27	CR	4
+p959-132	CHOP959	132		2/4/2014	B cell - ALL	8	 8.Complete remission	3/3/2014	27	CR	4
+p959-133	CHOP959	133		3/12/2014	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	4/7/2014	26	CR	4
+p959-136	CHOP959	136		4/15/2014	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	5/16/2014	31	CR	4
+p959-138	CHOP959	138		5/13/2014	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	6/9/2014	27	CR	4
+p959-139	CHOP959	139		6/11/2014	B cell - ALL	8	 8.Complete remission	7/10/2014	29	CR	4
+p959-140	CHOP959	140		6/3/2014	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	6/30/2014	27	CR	4
+p959-141	CHOP959	141		7/15/2014	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	8/14/2014	30	CR	4
+p959-143	CHOP959	143		7/8/2014	Other:  MEDIASTINAL B-CELL LYMPHOMA	28	28.No response	8/8/2014	31	NR	2
+p959-144	CHOP959	144		8/5/2014	B cell - ALL	8	 8.Complete remission	9/4/2014	30	CR	4
+p959-145	CHOP959	145		7/22/2014	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	8/21/2014	30	CR	4
+p959-146	CHOP959	146		8/19/2014	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	9/15/2014	27	CR	4
+p959-147	CHOP959	147		9/4/2014	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	10/2/2014	28	CR	4
+p959-148	CHOP959	148		8/12/2014	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	9/11/2014	30	CR	4
+p959-149	CHOP959	149		8/27/2014	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	9/22/2014	26	CR	4
+p959-150	CHOP959	150		9/30/2014	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	10/30/2014	30	CR	4
+p959-151	CHOP959	151		9/9/2014	B cell - ALL	8	 8.Complete remission	10/6/2014	27	CR	4
+p959-152	CHOP959	152		10/28/2014	B cell - ALL	8	 8.Complete remission	11/24/2014	27	CR	4
+p959-153	CHOP959	153		12/2/2014	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	12/29/2014	27	CR	4
+p959-154	CHOP959	154		2/17/2015	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	3/19/2015	30	CR	4
+p959-155	CHOP959	155		11/25/2014	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	12/22/2014	27	CR	4
+p959-156	CHOP959	156		1/27/2015	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	2/26/2015	30	CR	4
+p959-157	CHOP959	157		2/10/2015	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	3/12/2015	30	CR	4
+p959-158	CHOP959	158		2/25/2015	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	3/26/2015	29	CR	4
+p959-159	CHOP959	159		3/10/2015	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	4/9/2015	30	CR	4
+p959-160	CHOP959	160		3/17/2015	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	4/15/2015	29	CR	4
+p959-161	CHOP959	161		4/7/2015	B cell - ALL	8	 8.Complete remission	5/7/2015	30	CR	4
+p959-162	CHOP959	162		6/9/2015	B cell - ALL	8	 8.Complete remission	7/9/2015	30	CR	4
+p959-163	CHOP959	163		5/5/2015	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	6/4/2015	30	CR	4
+p959-164	CHOP959	164		4/28/2015	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	5/28/2015	30	CR	4
+p959-165	CHOP959	165		6/23/2015	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	7/20/2015	27	CR	4
+p959-166	CHOP959	166		7/7/2015	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	8/6/2015	30	CR	4
+p959-167	CHOP959	167		7/9/2015	B cell - ALL	28	28.No response	7/27/2015	18	NR	2
+p959-168	CHOP959	168		8/13/2015	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	9/10/2015	28	CR	4
+p959-169	CHOP959	169		7/28/2015	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	8/27/2015	30	CR	4
+p959-171	CHOP959	171		9/8/2015	B cell - ALL	8	 8.Complete remission	10/5/2015	27	CR	4
+p959-172	CHOP959	172		9/22/2015	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	10/22/2015	30	CR	4
+p959-174	CHOP959	174		3/29/2016	B cell - ALL	8	 8.Complete remission	4/27/2016	29	CR	4
+p959-175	CHOP959	175		6/14/2016	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	7/14/2016	30	CR	4
+p03712-01	UPCC03712	1		2/26/2013	Other:  IDENTIFIED AS BOTH CLL/SLL AND AGGRESSIVE	28	28.No response	3/27/2013	29	NR	2
+p03712-03	UPCC03712	3		3/12/2013	Chronic leukemia - CLL	33	33.Complete rem-incompl marrow recovery hematopoietic recovery	4/9/2013	28	CR	4
+p03712-04	UPCC03712	4		3/12/2013	Chronic leukemia - CLL	33	33.Complete rem-incompl marrow recovery hematopoietic recovery	4/11/2013	30	CR	4
+p03712-06	UPCC03712	6		4/30/2013	Chronic leukemia - CLL	8	 8.Complete remission	1/13/2014	258	CR	4
+p03712-08	UPCC03712	8		4/23/2013	Chronic leukemia - CLL	28	28.No response	5/22/2013	29	NR	2
+p03712-09	UPCC03712	9		4/16/2013	Other:  CLL/SLL	6	 6.Progressive disease (PD)	5/13/2013	27	PD	1
+p03712-11	UPCC03712	11		4/9/2013	Small Lymphocytic Leukmia	28	28.No response	5/6/2013	27	NR	2
+p03712-12	UPCC03712	12		4/30/2013	Chronic leukemia - CLL	28	28.No response	5/28/2013	28	NR	2
+p03712-14	UPCC03712	14		6/4/2013	Chronic leukemia - CLL	28	28.No response	7/3/2013	29	NR	2
+p03712-16	UPCC03712	16		6/4/2013	Small Lymphocytic Leukmia	18	18.Partial remission (PR)	7/2/2013	28	PR	3
+p03712-17	UPCC03712	17		7/16/2013	Chronic leukemia - CLL	28	28.No response	8/13/2013	28	NR	2
+p03712-18	UPCC03712	18		8/13/2013	Chronic leukemia - CLL	34	34.Partial rem with incompl hematopoietic recovery	9/12/2013	30	PR	3
+p03712-20	UPCC03712	20		7/23/2013	Chronic leukemia - CLL	28	28.No response	8/20/2013	28	NR	2
+p03712-22	UPCC03712	22		9/6/2013	Chronic leukemia - CLL	33	33.Complete rem-incompl marrow recovery hematopoietic recovery	10/1/2013	25	CR	4
+p03712-24	UPCC03712	24		8/27/2013	Chronic leukemia - CLL	6	 6.Progressive disease (PD)	9/24/2013	28	PD	1
+p03712-25	UPCC03712	25		8/20/2013	Chronic leukemia - CLL	28	28.No response	9/18/2013	29	NR	2
+p03712-26	UPCC03712	26		9/17/2013	Chronic leukemia - CLL	28	28.No response	10/14/2013	27	NR	2
+p03712-29	UPCC03712	29		9/24/2013	Chronic leukemia - CLL	18	18.Partial remission (PR)	12/17/2013	84	PR	3
+p03712-30	UPCC03712	30		10/15/2013	Chronic leukemia - CLL	28	28.No response	11/12/2013	28	NR	2
+p03712-31	UPCC03712	31		1/14/2014	Chronic leukemia - CLL	18	18.Partial remission (PR)	4/2/2014	78	PR	3
+p03712-34	UPCC03712	34		10/29/2013	Chronic leukemia - CLL	28	28.No response	11/26/2013	28	NR	2
+p03712-35	UPCC03712	35		11/19/2013	Chronic leukemia - CLL	28	28.No response	12/17/2013	28	NR	2
+p03712-37	UPCC03712	37		1/14/2014	Chronic leukemia - CLL	28	28.No response	2/2/2014	19	NR	2
+p03712-39	UPCC03712	39		1/28/2014	Chronic leukemia - CLL	28	28.No response	2/27/2014	30	NR	2
+p03712-40	UPCC03712	40		2/4/2014	Chronic leukemia - CLL	28	28.No response	3/6/2014	30	NR	2
+p03712-43	UPCC03712	43		10/6/2015	Chronic leukemia - CLL	18	18.Partial remission (PR)	11/2/2015	27	PR	3
+p03712-45	UPCC03712	45		5/29/2014	Chronic leukemia - CLL	8	 8.Complete remission	6/24/2014	26	CR	4
+p03712-46	UPCC03712	46		7/1/2014	Chronic leukemia - CLL	6	 6.Progressive disease (PD)	7/29/2014	28	PD	1
+p03712-47	UPCC03712	47		5/5/2015	Chronic leukemia - CLL	33	33.Complete rem-incompl marrow recovery hematopoietic recovery	6/2/2015	28	CR	4
+p03712-48	UPCC03712	48		8/28/2014	Chronic leukemia - CLL	33	33.Complete rem-incompl marrow recovery hematopoietic recovery	9/1/2015	369	CR	4
+p03712-51	UPCC03712	51		3/3/2015	Chronic leukemia - CLL	6	 6.Progressive disease (PD)	3/31/2015	28	PD	1
+p03712-51R	UPCC03712	51	R	8/25/2015	Chronic leukemia - CLL	28	28.No response	9/21/2015	27	NR	2
+p03712-52	UPCC03712	52		4/28/2015	Chronic leukemia - CLL	6	 6.Progressive disease (PD)	5/26/2015	28	PD	1
+p03712-55	UPCC03712	55		5/5/2015	Chronic leukemia - CLL	77	77.Unknown	6/2/2015	28	Unk	
+p03712-57	UPCC03712	57		6/2/2015	Chronic leukemia - CLL	28	28.No response	6/29/2015	27	NR	2
+p03712-58	UPCC03712	58		8/11/2015	Chronic leukemia - CLL	33	33.Complete rem-incompl marrow recovery hematopoietic recovery	9/8/2015	28	CR	4
+p03712-59	UPCC03712	59		1/13/2016	Chronic leukemia - CLL	6	 6.Progressive disease (PD)	2/9/2016	27	PD	1
+p03712-60	UPCC03712	60		3/8/2016	Chronic leukemia - CLL	6	 6.Progressive disease (PD)	4/5/2016	28	PD	1
+p03712-61	UPCC03712	61		8/23/2016	Chronic leukemia - CLL	33	33.Complete rem-incompl marrow recovery hematopoietic recovery	9/20/2016	28	CR	4
+p04409-01	UPCC04409	1		8/3/2010	Chronic leukemia - CLL	8	 8.Complete remission	1/26/2011	176	CR	4
+p04409-02	UPCC04409	2		9/14/2010	Chronic leukemia - CLL	8	 8.Complete remission	12/28/2010	105	CR	4
+p04409-03	UPCC04409	3		8/31/2010	Chronic leukemia - CLL	28	28.No response	10/1/2010	31	NR	2
+p04409-05	UPCC04409	5		12/20/2011	Chronic leukemia - CLL	28	28.No response	1/17/2012	28	NR	2
+p04409-05	UPCC04409	5	R	1/15/2013	Chronic leukemia - CLL	28	28.No response	2/12/2013	28	NR	2
+p04409-06	UPCC04409	6		2/7/2012	Chronic leukemia - CLL	6	 6.Progressive disease (PD)	3/5/2012	27	PD	1
+p04409-07	UPCC04409	7		3/13/2012	Chronic leukemia - CLL	28	28.No response	4/13/2012	31	NR	2
+p04409-09	UPCC04409	9		5/15/2012	Chronic leukemia - CLL	18	18.Partial remission (PR)	8/15/2012	92	PR	3
+p04409-10	UPCC04409	10		6/12/2012	Other:  CLL/SLL	8	 8.Complete remission	11/13/2013	519	CR	4
+p04409-12	UPCC04409	12		7/17/2012	Chronic leukemia - CLL	18	18.Partial remission (PR)	8/13/2012	27	PR	3
+p04409-14	UPCC04409	14		10/2/2012	Chronic leukemia - CLL	6	 6.Progressive disease (PD)	10/31/2012	29	PD	1
+p04409-17	UPCC04409	17		12/11/2012	Chronic leukemia - CLL	28	28.No response	1/11/2013	31	NR	2
+p04409-18	UPCC04409	18		1/15/2013	Chronic leukemia - CLL	6	 6.Progressive disease (PD)	2/15/2013	31	PD	1
+p04409-22	UPCC04409	22		2/19/2013	Chronic leukemia - CLL	18	18.Partial remission (PR)	3/18/2013	27	PR	3
+p04409-23	UPCC04409	23		3/12/2013	B cell - Other ALL with CD19 expression	8	 8.Complete remission	4/9/2013	28	CR	4
+p04409-25	UPCC04409	25		3/26/2013	Chronic leukemia - CLL	28	28.No response	4/23/2013	28	NR	2
+p04409-26	UPCC04409	26		5/29/2013	B cell - ALL	8	 8.Complete remission	6/28/2013	30	CR	4
+p04409-27	UPCC04409	27		6/25/2013	B cell - ALL	8	 8.Complete remission	7/24/2013	29	CR	4
+p04409-29	UPCC04409	29		7/23/2013	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	8/19/2013	27	CR	4
+p04409-31	UPCC04409	31		8/20/2013	B cell - ALL	37	37.Complete rem with incompl blood count recovery (CRi)	9/17/2013	28	CR	4
+p04409-32	UPCC04409	32		9/17/2013	B cell - ALL	6	 6.Progressive disease (PD)	9/19/2014	367	PD	1
+p18415-01	UPCC18415	1		3/15/2016	Refractory SLL		Complete response (CR)	4/12/2016	28	CR	4
+p18415-02	UPCC18415	2		6/7/2016	Relapsed CLL		Partial response (PR)	7/1/2016	24	PR	3
+p18415-03	UPCC18415	3		6/21/2016	Refractory CLL		Complete response (CR)	9/28/2016	99	CR	4
+p18415-04	UPCC18415	4		4/11/2017	Refractory CLL		Complete response (CR)	4/4/2018	358	CR	4
+p18415-05	UPCC18415	5		7/13/2016	Relapsed CLL		Complete response (CR)	10/5/2016	84	CR	4
+p18415-06	UPCC18415	6		8/2/2016	Refractory CLL		Partial response (PR)	10/25/2016	84	PR	3
+p18415-07	UPCC18415	7		7/6/2016	Relapsed CLL		Complete response with incomplete marrow recovery (CRi)	10/7/2016	93	CR	4
+p18415-08	UPCC18415	8		9/20/2016	Refractory CLL		Stable disease	10/31/2016	41	SD	2
+p18415-09	UPCC18415	9		10/4/2016	Refractory CLL		Complete response (CR)	11/1/2016	28	CR	4
+p18415-10	UPCC18415	10		10/25/2016	Refractory CLL		Partial response (PR)	10/24/2017	364	PR	3
+p18415-11	UPCC18415	11		1/17/2017	Refractory CLL		Complete response with incomplete marrow recovery (CRi)	2/14/2017	28	CR	4
+p18415-12	UPCC18415	12		3/15/2017	Refractory CLL		Partial response (PR)	4/11/2017	27	PR	3
+p18415-13	UPCC18415	13		8/29/2017	Refractory CLL		Stable disease	9/26/2017	28	SD	2
+p18415-15	UPCC18415	15		5/31/2017	Refractory CLL		Partial response (PR)	6/27/2017	27	PR	3
+p18415-16	UPCC18415	16		9/12/2017	Refractory CLL		Complete response with incomplete marrow recovery (CRi)	9/7/2018	360	CR	4
+p18415-17	UPCC18415	17		10/24/2017	Refractory CLL			11/6/2017	13	NR	2
+p18415-18	UPCC18415	18		10/17/2017	Relapsed CLL		Not Assessed	End-of-Trt/ Day28 visit		ND	
+p18415-19	UPCC18415	19		9/20/2017	Refractory CLL		Complete response (CR)	10/17/2017	27	CR	4
+p18415-20	UPCC18415	20		10/10/2017	Refractory CLL		Complete response (CR)	11/9/2017	30	CR	4
