@@ -1,0 +1,203 @@
+---
+title: "CART samples"
+# citation-style: nature.csl
+# documentclass: book
+# link-citations: yes
+# bibliography: 'cite.bib'
+#output: html_notebook
+output: html_document
+---
+<style>
+.main-container {
+  max-width: 1500px;!important
+  margin-left: auto;!important
+  margin-right: auto;!important
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      dpi = 300,
+                      dev = "png",
+                      dev.args = list(type = "cairo-png"))
+library(gt23)
+library(RMySQL)
+library(openxlsx)
+library(tidyverse)
+library(VennDiagram)
+library(kableExtra)
+library(rmarkdown)
+options(bitmapType='cairo')
+display_venn <- function(x, ...){
+  grid.newpage()
+  venn_object <- venn.diagram(x, filename = NULL, ...)
+  grid.draw(venn_object)
+}
+#library(dplyr)
+```
+
+```{r getData, warning=FALSE}
+dbConn  <- dbConnect(MySQL(), group='specimen_management')
+samples_tmp <- dbGetQuery(dbConn, 
+                      'select * from gtsp where Trial="CART19_ALL" or Trial="CART19_CLL"') 
+samples_tmp2 <- samples_tmp %>%   mutate(SamplePatientCode=ifelse(grepl('^xxx$',SamplePatientCode),sub('^p','CHP',Patient),SamplePatientCode))
+rekk <-regexpr("\\..*$", samples_tmp2$SamplePatientCode , perl=TRUE)
+rekk2 <- ifelse(rekk==-1,10000,rekk)
+sub_rekk <- substring(samples_tmp2$SamplePatientCode,first=rekk2 )
+samples <- samples_tmp2 %>%
+  mutate(SpecimenInfo=ifelse(sub_rekk=='',SpecimenInfo,paste(SpecimenInfo,sub_rekk,sep = ':'))) %>%
+  mutate(SamplePatientCode=sub("\\..*$",'',SamplePatientCode))
+response_page1 <- openxlsx::read.xlsx("CART19 Patient_Response Info_12102020.xlsx", 1, detectDates = TRUE)
+response_page2 <- openxlsx::read.xlsx("CART19 Patient_Response Info_12102020.xlsx", 2, detectDates = TRUE)
+
+
+
+kk  <- samples %>% filter(Patient %in% response_page1$Patient.ID)
+response_page2_bis <- response_page2 %>% mutate(SamplePatientCode=paste0(protocol,'-',ID))
+kk2 <- samples %>% filter(SamplePatientCode %in% response_page2_bis$SamplePatientCode)
+kk3 <- samples %>% filter(grepl('^[CPN]R',samples$MiscComments))
+nobles_sampleData <- read.table('sampleData.tsv', sep = '\t', header = TRUE) 
+nobles_sampleData_f <- nobles_sampleData %>%
+  filter(Response_class!='')
+kk4 <- samples %>% filter( SpecimenAccNum %in% nobles_sampleData_f$SpecimenAccNum)
+found_samples_GTSP <- unique(c(kk$SpecimenAccNum,kk2$SpecimenAccNum,kk3$SpecimenAccNum,kk4$SpecimenAccNum))
+
+missing_samples <- samples %>% filter(!(SpecimenAccNum %in% found_samples_GTSP))
+
+sets <- list(
+  page1 = kk$SpecimenAccNum, 
+  page2 = kk2$SpecimenAccNum, 
+  misc = kk3$SpecimenAccNum,
+  cnobles = kk4$SpecimenAccNum
+)
+```
+
+
+# Samples
+
+A total of __`r samples %>% nrow()`__ samples have been sequenced 
+( __`r samples %>% filter(Trial=="CART19_ALL") %>% nrow()`__ ALL and 
+ __`r samples %>% filter(Trial=="CART19_CLL") %>% nrow()`__ CLL). We have response class
+ data for __`r length(found_samples_GTSP)`__ samples. We still need response class data
+ for __`r missing_samples %>% nrow()`__ samples.
+ 
+# Response class
+ 
+ Response class data has been acquired from 3 places
+
+ 1. A 2 pages xlmx files
+ 2. Miscellaneous field in the database
+ 3. Data from Chris Nobles
+ 
+ 
+```{r responseVenn,out.width="90%",fig.align="center" ,fig.cap="source for response class"}
+
+sets <- list(
+  page1 = kk$SpecimenAccNum, 
+  page2 = kk2$SpecimenAccNum, 
+  misc = kk3$SpecimenAccNum,
+  cnobles = kk4$SpecimenAccNum
+)
+
+display_venn(
+  sets,
+#  category.names = c("Set 1" , "Set 2 " , "Set 3", "Set 4"),
+  # Circles
+  lwd = 2,
+  lty = 'blank',
+  fill = c("#999999", "#E69F00", "#56B4E9", "#009E73"),
+  # Numbers
+  cex = .9,
+  fontface = "italic",
+  # Set names
+  cat.cex = 1,
+  cat.fontface = "bold",
+  cat.default.pos = "outer",
+  cat.dist = c(0.055, 0.055, 0.1, 0.1)
+)
+```
+
+```{r responseVenn2,out.width="90%",fig.align="center" ,fig.cap="proportion of missing responses"}
+
+miss_sets <- list(
+  all = samples$SpecimenAccNum,
+  cnobles = kk4$SpecimenAccNum
+)
+
+display_venn(
+  miss_sets,
+#  category.names = c("Set 1" , "Set 2 " , "Set 3", "Set 4"),
+  # Circles
+  lwd = 2,
+  lty = 'blank',
+  fill = c("#999999", "#E69F00"),
+  # Numbers
+  cex = .9,
+  fontface = "italic",
+  # Set names
+  cat.cex = 1,
+  cat.fontface = "bold",
+  cat.default.pos = "outer"
+)
+```
+
+# Missing data 
+
+```{r missingTable, message=FALSE, warning=FALSE}
+missing_table <- samples %>% filter( SpecimenAccNum %in% missing_samples$SpecimenAccNum) %>%
+#  select(c(SpecimenAccNum,SamplePatientCode,Patient,Sender)) %>%
+  group_by(Trial,SamplePatientCode,Patient) %>% summarise(NumberSamples=n(),.groups='drop') %>%
+  arrange(Trial,Patient) 
+missing_table %>%
+  kable( "html", table.attr = "style = \"color: black;\"") %>%
+  kable_styling("hover", full_width = F)
+write.xlsx(missing_table,'CART19_missing_response_samples_20211117.xls',overwrite = TRUE)
+```
+
+
+
+# Full list missing samples
+
+```{r missingTableF}
+samples %>% filter( SpecimenAccNum %in% missing_samples$SpecimenAccNum) %>%
+  select(c(SpecimenAccNum,SamplePatientCode,Patient,Sender)) %>%
+  kable( "html",table.attr = "style = \"color: black;\"") %>%
+  kable_styling("hover", full_width = F)
+```
+
+```{r addResponse, eval=FALSE, include=FALSE}
+results <- readRDS('result_full_ALL_CLL.rds')
+resp_class <- nobles_sampleData %>%
+  select(c('SpecimenAccNum',"Response_class")) %>%
+  mutate(specimen=SpecimenAccNum) %>%
+  mutate(Response_class= as.factor( ifelse(Response_class=='',"MISS",as.character(Response_class)))) %>%
+  mutate(SpecimenAccNum=NULL)
+
+kkkk <- left_join(results,resp_class,by = 'specimen') %>%
+  mutate(Response_class= as.factor( ifelse(is.na(Response_class),"MISS",as.character(Response_class))))
+
+saveRDS(kkkk, file = 'result_full_ALL_CLL_ML.rds')  
+```
+
+# Make full patient list
+
+```{r full patient list}
+nobles_class <- nobles_sampleData %>%
+  select(c('SpecimenAccNum',"Response","Response_class",'Trial_ID')) %>%
+  mutate(Response_class= as.factor( ifelse(Response_class=='',"MISSING",as.character(Response_class)))) %>%
+  mutate(Response= as.factor( ifelse(Response=='',"MISSING",as.character(Response)))) 
+
+current_table  <- left_join(samples,nobles_class,by = 'SpecimenAccNum') %>%
+  mutate(Response_class= as.factor( ifelse(is.na(Response_class),"MISSING",as.character(Response_class)))) %>%
+  mutate(Response= as.factor( ifelse(is.na(Response),"MISSING",as.character(Response)))) %>%
+  group_by(Trial,Trial_ID,SamplePatientCode,Patient,Response,Response_class) %>% summarise(NumberSamples=n(),.groups='drop')
+paged_table(current_table,options = list(rows.print = 20))
+#current_table
+wb <- openxlsx::createWorkbook()
+openxlsx::addWorksheet(wb, "All_samples")
+openxlsx::writeDataTable(wb,"All_samples",current_table)
+openxlsx::addWorksheet(wb, "Missing_response_samples")
+openxlsx::writeDataTable(wb,"Missing_response_samples",current_table %>% filter(Response=='MISSING'))
+openxlsx::saveWorkbook(wb, file = "ALL_CLL_samples_20211124.xlsx", overwrite = TRUE)
+#write.xlsx(missing_table,'CART19_missing_response_samples_20211117.xls',overwrite = TRUE)
+```
