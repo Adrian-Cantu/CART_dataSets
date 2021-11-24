@@ -9,7 +9,7 @@ library(gintools)
 library(RMySQL)
 library(geneRxCluster)
 library(ggplot2)
-numCores <- 10
+numCores <- 62
 source('utils.R')
 source('supporting_functions.R')
 source('clusters.R')
@@ -19,31 +19,35 @@ utilsDir <- 'utils'
 # Create a list of all GTSPs that passed through the INSPIIRED pipeline.
 dbConn  <- dbConnect(MySQL(), group='intsites_miseq')
 intSitesamples <- unname(unlist(dbGetQuery(dbConn, 'select sampleName from samples where sampleName like "%GTSP%"')))
-DBI::dbDisconnect(dbConn)
+#DBI::dbDisconnect(dbConn)
 
 intSitesamples <- unique(gsub('\\-\\d+$', '', intSitesamples))
 
-sampleData <- read.table('sampleData.tsv', sep = '\t', header = TRUE)
+sampleData <- read.table('sampleData.tsv', sep = '\t', header = TRUE) # this seems to be a table that includes all ALL
 sampleData$INSPIIRED_processed <- sampleData$SpecimenAccNum %in% intSitesamples
 
 samples  <- subset(sampleData, INSPIIRED_processed == TRUE)$SpecimenAccNum
 
-#-----
-dbConn  <- dbConnect(MySQL(), group='specimen_management')
-responses <- read.table('patientResponses.tsv', sep = '\t', header = TRUE, fill = TRUE, comment.char = '', check.names = FALSE)
-gtsp <- dbGetQuery(dbConn, "select * from gtsp")
-gtsp <- subset(gtsp, Patient %in% responses$PatietID)
-gtsp <- subset(gtsp, SpecimenAccNum %in% intSitesamples)
-table(gtsp$SpecimenAccNum %in% samples)
-#----
+# #-----
+# dbConn  <- dbConnect(MySQL(), group='specimen_management')
+# responses <- read.table('sampleUpdates/patientResponses.tsv', sep = '\t', header = TRUE, fill = TRUE, comment.char = '', check.names = FALSE)
+# gtsp <- dbGetQuery(dbConn, "select * from gtsp")
+# gtsp <- subset(gtsp, Patient %in% responses$PatietID)
+# gtsp <- subset(gtsp, SpecimenAccNum %in% intSitesamples)
+# table(gtsp$SpecimenAccNum %in% samples)
+# #----
 
-intSites <- getDBgenomicFragments(samples, 'specimen_management', 'intsites_miseq') %>%
-            stdIntSiteFragments() %>%
-            collapseReplicatesCalcAbunds() %>%
-            annotateIntSites()
+if( !file.exists('intSites.rds') ) {
+  kk1 <- getDBgenomicFragments(samples, 'specimen_management', 'intsites_miseq')
+  kk2 <- kk1 %>% stdIntSiteFragments(CPUs = numCores )
+  kk3 <- kk2 %>% collapseReplicatesCalcAbunds()
+  intSites <- kk3 %>% annotateIntSites(CPUs = numCores)
+  saveRDS(intSites, 'intSites.rds')
+} else {
+  intSites <- readRDS('intSites.rds')
+}
 
 
-saveRDS(intSites, 'intSites.rds')
 
 
 # Recreate columns used in published data.
@@ -100,13 +104,16 @@ rm(o)
 
 
 
-for (thing in ls()) { message(thing); print(object.size(get(thing)), units='auto') }
+#for (thing in ls()) { message(thing); print(object.size(get(thing)), units='auto') }
 
-objSizes()
+#objSizes()
 
 
 CpG_data <- cpg <- getUCSCtable("cpgIslandExt", "CpG Islands", freeze = "hg38") %>% 
                    dplyr::filter(chrom %in% paste0("chr", c(1:22, "X", "Y", "M")))
+
+#getUCSCtable("cpgIslandExt", "CpG Islands", freeze = "hg38")
+
 
 CpG_islands <- GenomicRanges::GRanges(
   seqnames = CpG_data$chrom,
@@ -142,7 +149,7 @@ window_size_epi <- c("10k"=1e4)
 
 
 ## Load epigenetic features
-epigenetic_features_path <- "/data/internal/epigeneticData/hg38" 
+epigenetic_features_path <- "/home/ubuntu/data/epidata/hg38/" 
 epigenetic_features_files <- list.files(epigenetic_features_path) %>%
   grep("HeLa", ., invert = TRUE, value = TRUE) %>%
   grep("CD133", ., invert = TRUE, value = TRUE) %>%
