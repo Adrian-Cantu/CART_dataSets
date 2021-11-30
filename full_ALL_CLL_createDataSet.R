@@ -168,7 +168,8 @@ epigenetic_features_files <- list.files(epigenetic_features_path) %>%
 
 
 epi_names <- str_split(epigenetic_features_files, "/")
-epi_names <- sapply(epi_names, "[[", 6)
+#epi_names <- sapply(epi_names, "[[", 6) ### need to fix the names
+epi_names <- sapply(epi_names, tail, n = 1L)
 epi_names <- str_remove(epi_names, ".RData") %>% str_replace_all("-", "_")
 
 epi_env <- new.env()
