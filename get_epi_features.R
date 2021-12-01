@@ -71,12 +71,14 @@ all_epi <- lapply(epi_files,function(x){readRDS(file.path("epi_rds", x))})
 
 plan(sequential)
 plan(multisession, workers = 30)
+l_names <- length(all_names)
 full_table2 <- lapply(all_names,function(c_gtsp){
   c_sample <- intSites %>% as.data.frame() %>%
     filter(GTSP==c_gtsp) %>% GenomicRanges::makeGRangesFromDataFrame(keep.extra.columns=TRUE)
-  print(paste0('starting work on ',c_gtsp))
+  c_num <- which(all_names==c_gtsp)
+  print(paste0('starting work on ',c_gtsp,' ',c_num,'/',l_names))
   kk <- future_imap(all_epi, function(x,name){
-    print(paste0('- - - - starting with',name))
+    print(paste0('- - - - starting with ',name))
     #epi_curr <- readRDS(file.path("epi_rds", x))
     p_kk <- getFeatureCounts(c_sample, x, name) %>%
       as.data.frame() %>%
